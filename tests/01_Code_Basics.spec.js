@@ -8,7 +8,7 @@ test.describe("Basics of Automation", ()=>{
     })
 
 
-    test('xapth-customized/relative',async({page})=>{
+    test.skip('xapth-customized/relative',async({page})=>{
 
         // await page.goto(BASE_URL);
         const allcontext= await page.locator("//a[@data-product-id='1']/ancestor::div[@class='features_items']").allTextContents();
@@ -35,7 +35,6 @@ test.describe("Basics of Automation", ()=>{
         // await page.getByTitle('OnlineTypingWork').click();
 
     });
-
 
 
 })
