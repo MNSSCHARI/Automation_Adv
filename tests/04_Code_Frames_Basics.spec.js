@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test'
 
-test.describe.skip('Alrets', ()=>{ 
+test.describe('Alrets', ()=>{ 
     test.beforeEach('Excecute1st',async({page})=>{
         await page.goto('https://demo.automationtesting.in/');
         console.log('Navigated to Automation demo site')

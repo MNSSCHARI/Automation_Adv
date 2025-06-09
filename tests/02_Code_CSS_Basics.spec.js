@@ -7,6 +7,7 @@ test.describe('tests for css', ()=>{
 
     test('unique_elements', async({page})=>{
         await page.locator('.ActionButton-module_mediumAndUpText__3D7uw').click();
+        await page.waitForTimeout(3000);
         await page.goBack();
         await page.waitForTimeout(3000);
         await page.getByTestId('next-slide-button').click();
@@ -27,10 +28,10 @@ test.describe('tests for css', ()=>{
 
     test('element_scroll_screenshot', async({page})=>{
         await page.waitForTimeout(3000);
-        const elemnt_sc= await page.locator("[class='BkText_typeShortMl__ODfcA BkText_bkText__NcDVw BkText_medium__N04Bo CTASectionHeadline_heading__ZZMJa default']");
-        elemnt_sc.scrollIntoViewIfNeeded();
-        elemnt_sc.screenshot({path:'scroll_elemrnt_sc'});
-
+        const elemnt_sc= page.locator("//h2[text()='500,000+ organizations use Airtable every day. Join them.']");
+        await page.waitForLoadState('networkidle');
+        await elemnt_sc.scrollIntoViewIfNeeded();
+        await elemnt_sc.screenshot({path:'new_sc4.png'});
     })
 
 })
